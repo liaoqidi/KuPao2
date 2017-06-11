@@ -20,8 +20,6 @@ public:
 
 	bool init();
 	void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
-	void setmenuInstace();
-	void cancelmenuInstace();
 	MenuBoard *pMenuBoard;
 	CREATE_FUNC(MainLayer);
 	static CCScene* createMainScene();

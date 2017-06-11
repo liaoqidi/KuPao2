@@ -299,8 +299,6 @@ void MainBoard::callBack(CCObject* pSender,TouchEventType type){
 			unHideMainBoard();
 		}else if(pSender == pLordSure){
 			//增加二次弹窗
-			MainLayer aaa;
-			aaa.setmenuInstace();
 			addChild(SecondLordSure::create());
 			return;
 
@@ -746,6 +744,5 @@ void SecondLordSure::doSure(){
 }
 
 void SecondLordSure::doCancel(){
-	MainLayer aaa;
-	aaa.cancelmenuInstace();
+	
 }

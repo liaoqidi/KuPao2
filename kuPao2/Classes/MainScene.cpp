@@ -4,7 +4,6 @@
 #include "ChooseScene.h"
 
 static MenuBoard* menuInstace = NULL;
-static MenuBoard* pMenuInstace = NULL;
 
 CCScene* getSceneWithLayer(CCLayer* pLayer){
 
@@ -63,23 +62,6 @@ CCScene* MainLayer::createMainScene(){
 	pScene->addChild(MainLayer::create());
 
 	return pScene;
-}
-
-void MainLayer::setmenuInstace(){
-	if (menuInstace == NULL)
-	{
-		menuInstace = pMenuInstace;
-	}
-	
-	if (menuInstace == NULL)
-	{
-		CCLog("menuInstace---", menuInstace);
-	}
-
-}
-
-void MainLayer::cancelmenuInstace(){
-	menuInstace = NULL;
 }
 
 bool LoadLayer::init(){
@@ -146,7 +128,6 @@ bool MenuBoard::init(){
 	setVisible(false);
 
 	menuInstace = this;
-	pMenuInstace = this;
 	runAction(CCSequence::create(CCDelayTime::create(0),CCShow::create(),CCEaseBackOut::create(CCScaleTo::create(0.2, 1)),NULL));
 
 	pLight = CCSprite::create("GameUI/canSee.png");
@@ -184,9 +165,9 @@ void MenuBoard::call_back(CCObject* pSender){
 
 MenuBoard* MenuBoard::shareContentMenu(){
 
-	//if(menuInstace != NULL)
-	//	menuInstace->runAction(CCRepeat::create(CCSequence::create(CCEaseInOut::create(CCMoveBy::create(0.1,ccp(-13,0)),2),
-	//	CCEaseInOut::create(CCMoveBy::create(0.1,ccp(13,0)),2),NULL),3));
+	if (menuInstace != NULL)
+		menuInstace->runAction(CCRepeat::create(CCSequence::create(CCEaseInOut::create(CCMoveBy::create(0.1, ccp(-13, 0)), 2),
+		CCEaseInOut::create(CCMoveBy::create(0.1, ccp(13, 0)), 2), NULL), 3));
 
 	return menuInstace;
 }
