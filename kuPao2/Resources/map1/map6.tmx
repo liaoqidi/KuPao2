@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="main" tilewidth="40" tileheight="40">
+  <image source="main.png" width="280" height="240"/>
+ </tileset>
+ <layer name="show2" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztzskNgDAMBdFAWMIa1v5bZeSTOzCHP9K7T0pKKaX+XIMW2enQY8AYt2YVTJidBSs27HFrVsWB07lw48Eb9PUBB1sBJA==
+  </data>
+ </layer>
+ <layer name="show1" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztzrURwEAQBEExMzPmn6PG/Ah0zk1V27uWpWmaJpcNBy48+AgQSp4yihAjQYoMOQrJU0YlKtRo0KJDL3nKaMCICTMWrNgkTxntOHDiwo0H7w/bH/pOAnc=
+  </data>
+ </layer>
+ <layer name="show3" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJzt0EkKg1AQRVG7GI1RYxd7E3X/e/QOHRTU5CMI/8EZV3Edx87Ozu6ec+HBVwR4IMTzwv8ixHgpEryRIjNwV+oiNcjxQaEoUaFGY+A/qYvU4IsWnaLHgBGTgf+kLlKDGQt+ij9WbNhPdw4X3wXt
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object x="120" y="400" width="280" height="80"/>
+  <object x="400" y="320" width="200" height="160"/>
+  <object x="600" y="400" width="280" height="80"/>
+  <object x="1000" y="320" width="480" height="160"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12">
+  <object x="320" y="160"/>
+  <object x="360" y="160"/>
+  <object x="440" y="160"/>
+  <object x="400" y="160"/>
+  <object x="480" y="160"/>
+  <object x="520" y="160"/>
+  <object x="560" y="160"/>
+  <object x="600" y="160"/>
+  <object x="640" y="160"/>
+  <object x="600" y="200"/>
+  <object x="560" y="240"/>
+  <object x="600" y="120"/>
+  <object x="560" y="80"/>
+  <object x="1000" y="160"/>
+  <object x="1040" y="160"/>
+  <object x="1080" y="160"/>
+  <object x="1160" y="160"/>
+  <object x="1120" y="160"/>
+  <object x="1200" y="160"/>
+  <object x="1240" y="160"/>
+  <object x="1280" y="160"/>
+  <object x="1320" y="160"/>
+  <object x="1280" y="120"/>
+  <object x="1240" y="80"/>
+  <object x="1280" y="200"/>
+  <object x="1240" y="240"/>
+ </objectgroup>
+ <objectgroup name="enemy" width="40" height="12">
+  <object x="760" y="160"/>
+ </objectgroup>
+</map>

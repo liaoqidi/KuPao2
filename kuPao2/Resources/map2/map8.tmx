@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="main" tilewidth="40" tileheight="40">
+  <image source="main.png" width="640" height="280"/>
+ </tileset>
+ <layer name="show2" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztzsUNA0EQAMEzMzMzY/7RuaJY+TEt1b+zLIqiKPrHcuQpUKREmQpVatRp0KRFmw7dBH89+gwYMmLMhCkz5ixYsmLNhm2Cvx17Dhw5cebClRt3Hjx58ebDN8HfD+vtBJk=
+  </data>
+ </layer>
+ <layer name="show1" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztzlVWglEAhVHsDmwRxMIAA7tQFFuxAxvnPwr3FHy5L/5nrf18vlgsWrRo/2k11FJHPQ000kQzLbTSRjsddNJFd4C+OD300kc/AwwyxDAJRkiSYpQ0YwH6xplgkikyTDPDLHNkyTHPAosskQ/Qt8wKq6yxzgabbLHNDrsU2GOfIgcB+g4pccQxJ5xyxjkXXHJFmWtuuOUuQN89DzzyxDMvVHjljXc++OSLb6r8/PHrF+6KEjE=
+  </data>
+ </layer>
+ <layer name="show3" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztzjcOwkAARFFDQ44NYDINwSY25HD/U/EKroC22S+9cqRJklgsFov9uwJFSpSpUKVGnQZNWrQD/OvQpUefASlDRoyZMGUW4N+cBUtWrNmQkbNlx55DgH9HTpy5cOXGnQdPXrz5/DZfVRwGWQ==
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object x="40" y="400" width="520" height="80"/>
+  <object x="560" y="280" width="560" height="200"/>
+  <object x="1120" y="360" width="400" height="120"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12">
+  <object x="600" y="160"/>
+  <object x="600" y="120"/>
+  <object x="640" y="80"/>
+  <object x="680" y="80"/>
+  <object x="720" y="120"/>
+  <object x="720" y="160"/>
+  <object x="760" y="160"/>
+  <object x="800" y="160"/>
+  <object x="800" y="120"/>
+  <object x="840" y="80"/>
+  <object x="880" y="80"/>
+  <object x="920" y="120"/>
+  <object x="920" y="160"/>
+  <object x="960" y="160"/>
+  <object x="1000" y="160"/>
+  <object x="1000" y="120"/>
+  <object x="1040" y="80"/>
+  <object x="1080" y="80"/>
+  <object x="1120" y="120"/>
+  <object x="1120" y="160"/>
+ </objectgroup>
+ <objectgroup name="enemy" width="40" height="12">
+  <object x="280" y="200"/>
+ </objectgroup>
+ <objectgroup name="up" width="40" height="12">
+  <object x="1320" y="160"/>
+ </objectgroup>
+</map>

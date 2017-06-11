@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="forest" tilewidth="40" tileheight="40">
+  <image source="forest.png" width="1600" height="400"/>
+ </tileset>
+ <layer name="terrain1" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJyTYmBgkBrE2GmQ46xBjicNcrxrkONHgxxzMQ5ubDTIcdQgx02DHGcwDG48YZBjAIcJyUE=
+  </data>
+ </layer>
+ <layer name="terrain2" width="40" height="12" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAb0BAAeAAAE=
+  </data>
+ </layer>
+ <layer name="terrain3" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYECAYkYGhhIgLgXiMiAuB+IKIK4E4iogrgbiGkYGnGAnbimcYAcZenDZsxOKsbkfJA5zP8xOYvz7gAI3ExMeO5FocsKPFIAv3IgFlKaRwWYPvcBw8M9o3I+CUUBdAADlnC7D
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object name="c1" x="0" y="400" width="1600" height="80"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12">
+  <object type="3" x="1320" y="200" width="80" height="80"/>
+  <object type="0" x="560" y="200" width="40" height="40"/>
+  <object type="0" x="680" y="160" width="40" height="40"/>
+  <object type="0" x="760" y="200" width="40" height="40"/>
+  <object type="0" x="720" y="160" width="40" height="40"/>
+  <object type="0" x="680" y="240" width="40" height="40"/>
+  <object type="0" x="360" y="320" width="40" height="40"/>
+  <object type="0" x="960" y="320" width="40" height="40"/>
+  <object type="0" x="840" y="320" width="40" height="40"/>
+  <object type="0" x="40" y="200" width="40" height="40"/>
+  <object type="0" x="880" y="320" width="40" height="40"/>
+  <object type="0" x="200" y="240" width="40" height="40"/>
+  <object type="0" x="1360" y="280" width="40" height="40"/>
+  <object type="0" x="880" y="200" width="40" height="40"/>
+  <object type="0" x="80" y="240" width="40" height="40"/>
+  <object type="0" x="1000" y="160" width="40" height="40"/>
+  <object type="0" x="0" y="240" width="40" height="40"/>
+  <object type="0" x="960" y="240" width="40" height="40"/>
+  <object type="0" x="1040" y="240" width="40" height="40"/>
+  <object type="0" x="1280" y="200" width="40" height="40"/>
+  <object type="0" x="1080" y="240" width="40" height="40"/>
+  <object type="0" x="1200" y="240" width="40" height="40"/>
+  <object type="0" x="1120" y="120" width="40" height="40"/>
+  <object type="0" x="680" y="120" width="40" height="40"/>
+  <object type="0" x="1080" y="120" width="40" height="40"/>
+  <object type="0" x="360" y="160" width="40" height="40"/>
+  <object type="0" x="400" y="160" width="40" height="40"/>
+  <object type="0" x="1360" y="160" width="40" height="40"/>
+  <object type="0" x="360" y="240" width="40" height="40"/>
+  <object type="0" x="240" y="320" width="40" height="40"/>
+  <object type="0" x="480" y="120" width="40" height="40"/>
+  <object type="0" x="600" y="120" width="40" height="40"/>
+  <object type="0" x="520" y="240" width="40" height="40"/>
+  <object type="0" x="400" y="120" width="40" height="40"/>
+  <object type="0" x="720" y="280" width="40" height="40"/>
+  <object type="0" x="720" y="200" width="40" height="40"/>
+  <object type="0" x="720" y="240" width="40" height="40"/>
+  <object type="0" x="1000" y="320" width="40" height="40"/>
+  <object type="0" x="840" y="200" width="40" height="40"/>
+  <object type="0" x="0" y="200" width="40" height="40"/>
+  <object type="0" x="800" y="320" width="40" height="40"/>
+  <object type="0" x="160" y="320" width="40" height="40"/>
+  <object type="0" x="920" y="320" width="40" height="40"/>
+  <object type="0" x="240" y="240" width="40" height="40"/>
+  <object type="0" x="1400" y="200" width="40" height="40"/>
+  <object type="0" x="840" y="240" width="40" height="40"/>
+  <object type="0" x="120" y="240" width="40" height="40"/>
+  <object type="0" x="1280" y="120" width="40" height="40"/>
+  <object type="0" x="40" y="280" width="40" height="40"/>
+  <object type="0" x="40" y="160" width="40" height="40"/>
+  <object type="0" x="1000" y="280" width="40" height="40"/>
+  <object type="0" x="400" y="280" width="40" height="40"/>
+  <object type="0" x="80" y="200" width="40" height="40"/>
+  <object type="0" x="1040" y="280" width="40" height="40"/>
+  <object type="0" x="1000" y="240" width="40" height="40"/>
+  <object type="0" x="1200" y="120" width="40" height="40"/>
+  <object type="0" x="440" y="200" width="40" height="40"/>
+  <object type="0" x="1320" y="120" width="40" height="40"/>
+  <object type="0" x="200" y="200" width="40" height="40"/>
+  <object type="0" x="1040" y="120" width="40" height="40"/>
+  <object type="0" x="400" y="200" width="40" height="40"/>
+  <object type="0" x="1320" y="160" width="40" height="40"/>
+  <object type="0" x="400" y="240" width="40" height="40"/>
+  <object type="0" x="1280" y="240" width="40" height="40"/>
+  <object type="0" x="200" y="320" width="40" height="40"/>
+  <object type="0" x="520" y="200" width="40" height="40"/>
+  <object type="0" x="440" y="120" width="40" height="40"/>
+  <object type="0" x="680" y="280" width="40" height="40"/>
+  <object type="0" x="560" y="240" width="40" height="40"/>
+  <object type="0" x="1400" y="240" width="40" height="40"/>
+  <object type="0" x="640" y="240" width="40" height="40"/>
+  <object type="0" x="760" y="240" width="40" height="40"/>
+  <object type="0" x="680" y="200" width="40" height="40"/>
+  <object type="0" x="640" y="200" width="40" height="40"/>
+  <object type="0" x="80" y="320" width="40" height="40"/>
+  <object type="0" x="240" y="200" width="40" height="40"/>
+  <object type="0" x="720" y="320" width="40" height="40"/>
+  <object type="0" x="320" y="320" width="40" height="40"/>
+  <object type="0" x="760" y="320" width="40" height="40"/>
+  <object type="0" x="1200" y="200" width="40" height="40"/>
+  <object type="0" x="120" y="320" width="40" height="40"/>
+  <object type="0" x="1040" y="200" width="40" height="40"/>
+  <object type="0" x="80" y="280" width="40" height="40"/>
+  <object type="0" x="880" y="240" width="40" height="40"/>
+  <object type="0" x="1160" y="240" width="40" height="40"/>
+  <object type="0" x="40" y="240" width="40" height="40"/>
+  <object type="0" x="1040" y="160" width="40" height="40"/>
+  <object type="0" x="120" y="200" width="40" height="40"/>
+  <object type="0" x="1000" y="200" width="40" height="40"/>
+  <object type="0" x="320" y="240" width="40" height="40"/>
+  <object type="0" x="1160" y="200" width="40" height="40"/>
+  <object type="0" x="1080" y="200" width="40" height="40"/>
+  <object type="0" x="960" y="200" width="40" height="40"/>
+  <object type="0" x="1160" y="120" width="40" height="40"/>
+  <object type="0" x="360" y="280" width="40" height="40"/>
+  <object type="0" x="1240" y="120" width="40" height="40"/>
+  <object type="0" x="440" y="240" width="40" height="40"/>
+  <object type="0" x="360" y="200" width="40" height="40"/>
+  <object type="0" x="1320" y="280" width="40" height="40"/>
+  <object type="0" x="320" y="200" width="40" height="40"/>
+  <object type="0" x="640" y="120" width="40" height="40"/>
+  <object type="0" x="80" y="160" width="40" height="40"/>
+  <object type="0" x="520" y="120" width="40" height="40"/>
+  <object type="0" x="280" y="320" width="40" height="40"/>
+  <object type="0" x="560" y="120" width="40" height="40"/>
+ </objectgroup>
+ <objectgroup name="enemy" width="40" height="12"/>
+</map>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="main" tilewidth="40" tileheight="40">
+  <image source="main.png" width="280" height="240"/>
+ </tileset>
+ <layer name="show2" width="40" height="12" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAb0BAAeAAAE=
+  </data>
+ </layer>
+ <layer name="show1" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztw1EKABAURNFXQslTwv636i5jPubUiTAzM0VFcGVj5xA8mVzcgg8vHz8prQTM
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object x="0" y="400" width="1560" height="80"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12"/>
+ <objectgroup name="enemy" width="40" height="12"/>
+</map>

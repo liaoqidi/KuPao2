@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="main" tilewidth="40" tileheight="40">
+  <image source="main.png" width="280" height="240"/>
+ </tileset>
+ <layer name="show2" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJztybcRwDAMwEA6Z0vOcf85jRHYsDJx9xVEPM/z/lmCFBlyFChRKb91NRq06NBjwKj81gVETJixYMWm/NbtOHDiwo0Hr/Jb9wFt3QMt
+  </data>
+ </layer>
+ <layer name="show1" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJzt0UcKgEAQBVFzzjnH+9/RuoAO4myEKXi7T29a01Qqleo/6TBgwoINB66k/dc8+AgQIkKMRNL+ayky5ChQokItaS9K9I8GLTr0GDBiurn3di9K9I8ZC1Zs2HHgvLn3tL8AwrwFVg==
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object x="40" y="360" width="200" height="120"/>
+  <object x="360" y="360" width="200" height="120"/>
+  <object x="560" y="440" width="200" height="40"/>
+  <object x="880" y="320" width="200" height="160"/>
+  <object x="1360" y="320" width="200" height="160"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12">
+  <object x="800" y="160"/>
+  <object x="800" y="120"/>
+  <object x="840" y="80"/>
+  <object x="880" y="80"/>
+  <object x="920" y="80"/>
+  <object x="960" y="120"/>
+  <object x="960" y="160"/>
+  <object x="1280" y="160"/>
+  <object x="1320" y="160"/>
+  <object x="1360" y="160"/>
+  <object x="1360" y="120"/>
+  <object x="1360" y="80"/>
+  <object x="1400" y="80"/>
+  <object x="1440" y="80"/>
+  <object x="1480" y="80"/>
+  <object x="1480" y="120"/>
+  <object x="1480" y="160"/>
+  <object x="1520" y="160"/>
+  <object x="240" y="120"/>
+  <object x="240" y="80"/>
+  <object x="280" y="80"/>
+  <object x="320" y="80"/>
+  <object x="320" y="120"/>
+  <object x="360" y="120"/>
+  <object x="400" y="120"/>
+  <object x="400" y="160"/>
+  <object x="440" y="160"/>
+  <object x="480" y="160"/>
+  <object x="480" y="200"/>
+ </objectgroup>
+ <objectgroup name="enemy" width="40" height="12"/>
+</map>

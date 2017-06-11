@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="12" tilewidth="40" tileheight="40">
+ <tileset firstgid="1" name="main" tilewidth="40" tileheight="40">
+  <image source="main.png" width="280" height="240"/>
+ </tileset>
+ <layer name="show2" width="40" height="12">
+  <data encoding="base64" compression="zlib">
+   eJzt0LkOgzAURFEnQICw7ySsIf//j9zaDc8FkguPdLrRFKOUi4uLy/154AkPPgK8EFqyFyHGGwlSZMgt2StQokKNBi06rSf9RbJn8nGPASM++GLCrPWkv0j2TD5esGLDjh8O/LWe9GfJ3tXWCarGBrs=
+  </data>
+ </layer>
+ <layer name="show1" width="40" height="12" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAb0BAAeAAAE=
+  </data>
+ </layer>
+ <objectgroup name="collision" width="40" height="12">
+  <object x="160" y="320" width="200" height="160"/>
+  <object x="560" y="400" width="200" height="80"/>
+  <object x="960" y="320" width="200" height="160"/>
+  <object x="1320" y="400" width="200" height="80"/>
+ </objectgroup>
+ <objectgroup name="items" width="40" height="12">
+  <object x="240" y="80"/>
+  <object x="320" y="80"/>
+  <object x="400" y="120"/>
+  <object x="440" y="200"/>
+  <object x="520" y="240"/>
+  <object x="600" y="280"/>
+  <object x="680" y="320"/>
+  <object x="800" y="280"/>
+  <object x="880" y="240"/>
+  <object x="960" y="200"/>
+  <object x="1040" y="120"/>
+  <object x="1120" y="80"/>
+  <object x="1200" y="80"/>
+ </objectgroup>
+ <objectgroup name="enemy" width="40" height="12">
+  <object x="1440" y="80"/>
+ </objectgroup>
+</map>
