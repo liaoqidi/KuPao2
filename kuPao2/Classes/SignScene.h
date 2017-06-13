@@ -23,6 +23,7 @@ private:
 public:
 	bool init();
 	bool showSign();
+	void revGift();				//ÁìÈ¡Àñ°ü
 	void sign(CCObject* pSender);    
 	void signClose(CCObject* pSender);
 	CREATE_FUNC(SignLayer);

@@ -156,7 +156,6 @@ void MenuBoard::call_back(CCObject* pSender){
 		runAction(CCSequence::create(CCEaseBackIn::create(CCScaleTo::create(0.1, 0.7)), CCRemoveSelf::create(), NULL));
 		doCancel();
 	}
-
 	//pMenu->setEnabled(false);
 
 	//runAction(CCSequence::create(CCEaseBackIn::create(CCScaleTo::create(0.1, 0.7)), CCRemoveSelf::create(), NULL));

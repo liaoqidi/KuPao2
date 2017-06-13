@@ -7,28 +7,34 @@
 #define _GAMEPAY_H_
 
 #include "cocos2d.h"
+#include <string.h>
+#include <vector>
+using namespace std;
 using namespace cocos2d;
 
 enum  PAY_WAY
 {
-	PAY_GIFT,   //大礼包
-	PAY_GOLD,	//金币
-	PAY_MONEY,  //钻石
-	PAY_VIP,    //会员
+	PAY_GIFT = 0,   //大礼包
+	PAY_GOLD,		//金币
+	PAY_MONEY,		//钻石
+	PAY_BLOOD,      //体力
+	PAY_VIP,		//会员
 };
 
 
 class GamePay{
 public:
 	GamePay();
-	void gameInit(const char* str);
+	void gameInit(char* str);
 	void paySuccess(int payStyle);
-	void payFail();
-
-	bool m_isSecond;		      //是否二次弹窗
-	bool m_isDistinct;	          //模糊清晰
-	int  m_pointType;             //购买类型
-	std::vector<std::string> vec; //
+	
+	void payFail();                   
+	//字符串拆分
+	vector<char*> splitWithStl(char *Str);
+	//是否二次弹窗{0:一次确认 1:两次确认}
+	char *m_isSecond;
+	//模糊清晰{0:清晰 1:模糊}
+	char *m_isDistinct;
 };
 
 #endif 

@@ -3,6 +3,9 @@
 #include "MainScene.h"
 #include "MainBoard.h" 
 #include "GameScene.h"
+#include "SDKManager.h"
+#include "GamePay.h"
+
 bool SignLayer::init(){ 
 	playMusic("music/main.mp3");
 	if(CCLayer::init() == false)	return false;
@@ -130,30 +133,31 @@ bool SignLayer::showSign(){
 }
 
 void SignLayer::sign(CCObject* pSender){
-	addChild(SecondRevgift::create());
-	return;
-
 	playSound("music/menu.mp3");
 
+	addChild(SecondRevgift::create());
+	
+}
+
+void SignLayer::revGift(){
 	CCSprite* pSignSign = CCSprite::create("signScene/signSign.png");
-	pSignSign->setPosition(ccp(signXY[keepDay][0] + 40,signXY[keepDay][1] - 40));
-	pSignSign->setAnchorPoint(ccp(0.5,0.5));
+	pSignSign->setPosition(ccp(signXY[keepDay][0] + 40, signXY[keepDay][1] - 40));
+	pSignSign->setAnchorPoint(ccp(0.5, 0.5));
 	pSignSign->setZOrder(1);
 	pNode->addChild(pSignSign);
 
 	pSign->setEnabled(false);
-	pSava->setIntegerForKey("preDay",contentDay);
+	pSava->setIntegerForKey("preDay", contentDay);
 	if (keepDay >= 6){
 		pSava->setIntegerForKey("keepDay", 6);
 	}
 	else{
 		pSava->setIntegerForKey("keepDay", (keepDay + 1) % 7);
 	}
-	
 
 	int contentJewelNum = pSava->getIntegerForKey("contentGold");
 	int contentMoneyNum = pSava->getIntegerForKey("contentMoney");
-	
+
 	switch (keepDay)
 	{
 	case 1:contentJewelNum += 5000;  contentMoneyNum += 400; break;
@@ -161,16 +165,19 @@ void SignLayer::sign(CCObject* pSender){
 	case 3:contentJewelNum += 15000; contentMoneyNum += 600; break;
 	case 4:contentJewelNum += 20000; contentMoneyNum += 700; break;
 	case 5:contentJewelNum += 30000; contentMoneyNum += 800; break;
-	case 6:contentJewelNum += 50000; contentMoneyNum += 1000;break;
+	case 6:contentJewelNum += 50000; contentMoneyNum += 1000; break;
 	case 0:contentJewelNum += 3000;  contentMoneyNum += 300; break;
 	}
 
-	pSava->setIntegerForKey("contentGold",contentJewelNum);
-	pSava->setIntegerForKey("contentMoney",contentMoneyNum);
-	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5,getSceneWithLayer(MainBoard::create())));
+	pSava->setIntegerForKey("contentGold", contentJewelNum);
+	pSava->setIntegerForKey("contentMoney", contentMoneyNum);
+	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5, getSceneWithLayer(MainBoard::create())));
 }
 
-void SignLayer::signClose(CCObject* pSender){
+
+void SignLayer::signClose(CCObject* pSender)
+{
+	playSound("music/menu.mp3");
 	CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(0.5, getSceneWithLayer(MainBoard::create())));
 }
 
@@ -181,8 +188,8 @@ bool SecondRevgift::init(){
 }
 
 void SecondRevgift::doSure(){
-
-	CCLog("hahahah");
-	//todo
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager aaa;
+	aaa.pay(0);
+#endif
 }

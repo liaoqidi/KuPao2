@@ -298,19 +298,9 @@ void MainBoard::callBack(CCObject* pSender,TouchEventType type){
 
 			unHideMainBoard();
 		}else if(pSender == pLordSure){
+			if (pLordSure->isBright() == false)	return;
 			//增加二次弹窗
 			addChild(SecondLordSure::create());
-			return;
-
-
-
-			if(pLordSure->isBright() == false)	return;
-
-			pSava->setBoolForKey("isLord",true);
-			checkCom();
-
-			saveAndAdd("contentGold",2000);
-			saveAndAdd("contentMoney",188);
 		}else if(pSender == pSet[0]){
 
 			pSava->setBoolForKey("isSound",!soundState);
@@ -686,7 +676,6 @@ bool SecondMoreMoney::init(){
 }
 
 void SecondMoreMoney::doSure(){
-
 	CCLog("Money");
 	//todo
 
