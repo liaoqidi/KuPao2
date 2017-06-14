@@ -5,7 +5,6 @@
 #include "GameScene.h"
 #include "SDKManager.h"
 #include "GamePay.h"
-
 bool SignLayer::init(){ 
 	playMusic("music/main.mp3");
 	if(CCLayer::init() == false)	return false;
@@ -134,9 +133,14 @@ bool SignLayer::showSign(){
 
 void SignLayer::sign(CCObject* pSender){
 	playSound("music/menu.mp3");
-
-	addChild(SecondRevgift::create());
-	
+	if (GamePay::getInstance()->getIsSecond()){
+		addChild(SecondRevgift::create());
+	}
+	else{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+		SDKManager::getinstance()->pay(PAY_GIFT);
+#endif
+	}
 }
 
 void SignLayer::revGift(){
@@ -149,10 +153,10 @@ void SignLayer::revGift(){
 	pSign->setEnabled(false);
 	pSava->setIntegerForKey("preDay", contentDay);
 	if (keepDay >= 6){
-		pSava->setIntegerForKey("keepDay", 6);
+	pSava->setIntegerForKey("keepDay", 6);
 	}
 	else{
-		pSava->setIntegerForKey("keepDay", (keepDay + 1) % 7);
+	pSava->setIntegerForKey("keepDay", (keepDay + 1) % 7);
 	}
 
 	int contentJewelNum = pSava->getIntegerForKey("contentGold");
@@ -189,7 +193,6 @@ bool SecondRevgift::init(){
 
 void SecondRevgift::doSure(){
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	SDKManager aaa;
-	aaa.pay(0);
+	SDKManager::getinstance()->pay(PAY_GIFT);
 #endif
 }

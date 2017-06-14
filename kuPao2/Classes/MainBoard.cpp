@@ -6,6 +6,8 @@
 #include "SimpleAudioEngine.h"
 #include "GameScene.h"
 #include "TaskScene.h"
+#include "GamePay.h"
+#include "SDKManager.h"
 
 using namespace CocosDenshion;
 
@@ -300,7 +302,16 @@ void MainBoard::callBack(CCObject* pSender,TouchEventType type){
 		}else if(pSender == pLordSure){
 			if (pLordSure->isBright() == false)	return;
 			//增加二次弹窗
-			addChild(SecondLordSure::create());
+			if (GamePay::getInstance()->getIsSecond())
+			{
+				addChild(SecondLordSure::create());
+			}
+			else
+			{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+				SDKManager::getinstance()->pay(PAY_VIP);
+#endif
+			}
 		}else if(pSender == pSet[0]){
 
 			pSava->setBoolForKey("isSound",!soundState);
@@ -665,44 +676,63 @@ void MainBoard::check(int index){
 }
 
 void MoreMoney::doSure(){
-	addChild(SecondMoreMoney::create());
-	//saveAndAdd("contentMoney",500);
+	if (GamePay::getInstance()->getIsSecond())
+	{
+		addChild(SecondMoreMoney::create());
+	}
+	else{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+		SDKManager::getinstance()->pay(PAY_MONEY);
+#endif
+	}
 }
 
 bool SecondMoreMoney::init(){
 	PopupLayer::init();
-
 	return true;
 }
 
 void SecondMoreMoney::doSure(){
-	CCLog("Money");
-	//todo
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager::getinstance()->pay(PAY_MONEY);
+#endif
 }
 
 void MoreGold::doSure(){
-	addChild(SecondMoreGold::create());
-	//saveAndAdd("contentGold",10000);
+	if (GamePay::getInstance()->getIsSecond())
+	{
+		addChild(SecondMoreGold::create());
+	}
+	else
+	{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+		SDKManager::getinstance()->pay(PAY_GOLD);
+#endif
+	}
 }
 
 bool SecondMoreGold::init(){
 	PopupLayer::init();
-
 	return true;
 }
 
 void SecondMoreGold::doSure(){
-
-	CCLog("Gold");
-	//todo
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager::getinstance()->pay(PAY_GOLD);
+#endif
 }
 
 void MoreBlood::doSure(){
-	addChild(SecondMoreBlood::create());
-
-	//CCUserDefault::sharedUserDefault()->setIntegerForKey("bloodNum",5);
+	if (GamePay::getInstance()->getIsSecond())
+	{
+		addChild(SecondMoreBlood::create());
+	}
+	else
+	{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+		SDKManager::getinstance()->pay(PAY_BLOOD);
+#endif
+	}
 }
 
 bool SecondMoreBlood::init(){
@@ -712,10 +742,9 @@ bool SecondMoreBlood::init(){
 }
 
 void SecondMoreBlood::doSure(){
-
-	CCLog("blood");
-	//todo
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager::getinstance()->pay(PAY_BLOOD);
+#endif
 }
 
 
@@ -726,10 +755,9 @@ bool SecondLordSure::init(){
 }
 
 void SecondLordSure::doSure(){
-
-	CCLog("LordSure");
-	//todo
-
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager::getinstance()->pay(PAY_VIP);
+#endif
 }
 
 void SecondLordSure::doCancel(){

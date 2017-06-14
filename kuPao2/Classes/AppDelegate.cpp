@@ -8,6 +8,8 @@
 #include "MainBoard.h"
 #include "SignScene.h"
 #include "overScene.h"
+#include "SDKManager.h"
+#include "GamePay.h"
 
 using namespace CocosDenshion;
 
@@ -24,7 +26,10 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
-
+//请求游戏配置信息
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	SDKManager::getinstance()->init();
+#endif
 	remove(CCUserDefault::sharedUserDefault()->getXMLFilePath().c_str());
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
@@ -110,6 +115,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 	}else{
 
 		SignLayer* pSignLayer = SignLayer::create();
+		GamePay::getInstance()->signLayer = pSignLayer;
+
 		if(pSignLayer->showSign()){
 
 			pDirector->runWithScene(CCTransitionFade::create(0.2,getSceneWithLayer(pSignLayer)));
@@ -159,9 +166,9 @@ void playSound(const char* pName){
 	}
 }
 
-void saveAndAdd(const char* pName,int num){
+void saveAndAdd(const char* pName, int num){
 
 	CCUserDefault* pSava = CCUserDefault::sharedUserDefault();
 	int contentNum = pSava->getIntegerForKey(pName);
-	pSava->setIntegerForKey(pName,contentNum + num);
+	pSava->setIntegerForKey(pName, contentNum + num);
 }

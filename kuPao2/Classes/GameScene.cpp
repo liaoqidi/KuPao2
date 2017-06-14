@@ -3241,9 +3241,10 @@ void PauseBoard::call_back(CCObject* pSender){
 	if (pSender != pSure){
 
 	}else{
-
+		MainBoard* mainBoard = MainBoard::create();
+		//  
 		CCDirector::sharedDirector()->replaceScene(
-			CCTransitionFade::create(0.2,getSceneWithLayer(MainBoard::create())));		
+			CCTransitionFade::create(0.2, getSceneWithLayer(mainBoard)));
 	}
 
 	pMenu->setEnabled(false);

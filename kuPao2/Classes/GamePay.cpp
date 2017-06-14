@@ -1,33 +1,42 @@
 #include "GamePay.h"
-#include "AppDelegate.h"
-#include "SignScene.h"
-#include "MainBoard.h"
-GamePay::GamePay()
+
+GamePay* GamePay::m_instance = NULL;
+
+GamePay* GamePay::getInstance()
 {
-	m_isSecond   = "0";
-	m_isDistinct = "0";
+	if (GamePay::m_instance == NULL)
+	{
+		GamePay::m_instance = new GamePay();
+	}
+
+	return GamePay::m_instance;
 }
 
-void GamePay::gameInit(char* str)
+GamePay::GamePay()
 {
-	vector<char*> initVer;
-	//·Ö¸î×Ö·û´®
-	initVer = this->splitWithStl(str);
-	if (initVer[1] != NULL && initVer[2] != NULL)
+	m_isSecond   = 0;
+	m_isDistinct = 0;
+	signLayer = NULL;
+	mainBoard = NULL;
+}
+
+void GamePay::gameInit(int initNum)
+{
+	if (initNum != NULL)
 	{
-		m_isSecond = initVer[1];
-		m_isDistinct = initVer[2];
+		m_isSecond   = (initNum/10)%10;
+		m_isDistinct = (initNum%10);
 	}
 }
 
 void GamePay::paySuccess(int payStyle)
 {
-	SignLayer sign;
-	MainBoard board;
 	switch (payStyle)
 	{
 	case PAY_GIFT:
-		sign.revGift();
+		if (signLayer){
+			signLayer->revGift();
+		}
 		break;
 	case PAY_GOLD:
 		saveAndAdd("contentGold", 10000);
@@ -40,7 +49,9 @@ void GamePay::paySuccess(int payStyle)
 		break;
 	case PAY_VIP:
 		CCUserDefault::sharedUserDefault()->setBoolForKey("isLord", true);
-		board.checkCom();
+		if (mainBoard){
+			mainBoard->checkCom();
+		}
 		saveAndAdd("contentGold", 2000);
 		saveAndAdd("contentMoney", 188);
 		break;
@@ -49,6 +60,12 @@ void GamePay::paySuccess(int payStyle)
 	}
 }
 
+void GamePay::saveAndAdd(const char* pName, int num){
+
+	CCUserDefault* pSava = CCUserDefault::sharedUserDefault();
+	int contentNum = pSava->getIntegerForKey(pName);
+	pSava->setIntegerForKey(pName, contentNum + num);
+}
 
 void GamePay::payFail()
 {
@@ -56,16 +73,20 @@ void GamePay::payFail()
 
 }
 
-vector<char*> GamePay::splitWithStl(char *Str)
+bool GamePay::getIsSecond()
 {
-	vector<char*> ver;
-	char *Delim = ",";
-	char*temp = strtok(Str, Delim);
-	while (temp)
+	if (m_isSecond == 0)
 	{
-		ver.push_back(temp);
-		temp = strtok(NULL, Delim);
-		
+		return false;
 	}
-	return ver;
+	return true;
+}
+
+bool GamePay::getIsDistinct()
+{
+	if (m_isDistinct == 0)
+	{
+		return true;
+	}
+	return false;
 }
